@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+        with: 
+          lfs: true 
       - name: Create a simple Web site
         run: mkdir -p deploy_dist && echo -e "<pre>$(date -u)\n$GITHUB_SHA\n$GITHUB_REF</pre>" > deploy_dist/index.html
       - uses: ./
